@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: arial;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    max-width: 1080px;
+    margin: auto;
+    padding: 20px;
+}
+
+.nav-section i {
+    font-size: 2em;
+}
+
+.nav-section h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.title-section {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    max-width: 1080px;
+    margin: auto;
+} 
+
+.title-section .profile-image {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 100px;
+}
+
+.title-section .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-section .right {
+    width: 90%;
+}
+
+.title-section .right-top {
+    font-size: 1.5em;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.title-section .right-bottom {
+    display: flex;
+    gap: 10px;
+}
+
+.title-section .right-bottom button {
+    padding: 10px;
+    border-radius: 15px;
+    background: gray;
+    color: white;
+    border: none;
+}
+
+.bio-section {
+    padding: 20px;
+    max-width: 1080px;
+    margin: auto;
+}
+
+.bio-section h2, p {
+    margin-bottom: 10px;
+}
+
+.bio-section .bio-hashtags {
+    color: skyblue;
+}
+
+.bio-section .bio-link {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.bio-section .bio-followers {
+    color: darkgray;
+    margin-top: 10px;
+}
+
+.bio-section .bio-followers .followers-link {
+    text-decoration: none;
+    color: white;
+}
+
+
+@media (min-width: 768px) {
+    .title-section .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bio-section {
+        padding-left: 205px;
+        position: relative;
+        top: -120px;
+        margin-bottom: -100px;
+    }
+}

@@ -1,0 +1,16 @@
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    max-width: 1080px;
+    margin: auto;
+}
+
+.metrics .metric {
+    text-align: center;
+}
+
+.metrics .metric p {
+    margin-top: 5px;
+    color: lightgray;
+}
