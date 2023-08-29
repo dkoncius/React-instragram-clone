@@ -1,4 +1,4 @@
-const API = '/api/v1/search?query=';
+const API = 'https://api.pexels.com/v1/search?query=';
 const API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
 
 export async function fetchPhotos(page = 1, topic = 'people') {
