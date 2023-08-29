@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
-import UsersPhoto from '/users-photo.jpg';
-import TaggedPhoto from '/tagged-photo.jpg';
+import React, { useState, useEffect } from 'react';
+import { fetchPhotos } from '../fetchPexelsApi'; // assuming fetchData.js is in the same directory
 import "../styles/Options.css"
 
 const Photos = ({ photos }) => (
   <div className="photos">
     {photos.map((photo, index) => (
       <div className="photo" key={index}>
-        <img src={photo} alt="photo" />
+        <img src={photo.src.medium} alt={photo.url} />
       </div>
     ))}
   </div>
 );
 
 export const Options = () => {
-  const usersPhotos = Array(6).fill(UsersPhoto);
-  const taggedPhotos = Array(6).fill(TaggedPhoto);
+  const [usersPhotos, setUsersPhotos] = useState([]);
+  const [taggedPhotos, setTaggedPhotos] = useState([]);
+  const [selected, setSelected] = useState('users-photos');
 
   const options = [
     { id: 'users-photos', icon: 'fa-solid fa-table-cells', photos: usersPhotos },
     { id: 'tagged-photos', icon: 'fa-regular fa-user', photos: taggedPhotos },
   ];
 
-  const [selected, setSelected] = useState(options[0].id);
+  useEffect(() => {
+    // Fetch users' photos
+    fetchPhotos(1, 'coding').then(photos => {
+      setUsersPhotos(photos);
+    });
+
+    // Fetch tagged photos
+    fetchPhotos(1, 'hacking').then(photos => {
+      setTaggedPhotos(photos);
+    });
+  }, []);
 
   return (
     <section className="grid">
