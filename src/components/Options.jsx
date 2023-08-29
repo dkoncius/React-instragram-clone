@@ -29,7 +29,7 @@ export const Options = () => {
       <div className="options">
         {options.map((option) => (
           <div
-            className={`${option.id} ${selected === option.id ? 'selected' : ''}`}
+            className={`${selected === option.id ? 'selected' : ''}`}
             onClick={() => setSelected(option.id)}
             key={option.id}
           >
